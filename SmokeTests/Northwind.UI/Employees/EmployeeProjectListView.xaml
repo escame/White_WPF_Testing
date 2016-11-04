@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:employees="clr-namespace:Northwind.UI.Employees">
+    <DataTemplate x:Key="EmployeeProjectListView" DataType="employees:EmployeeProjectListViewModel">
+
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Command="{Binding AddProjectCommand}" Padding="3" Content="Add" />
+                <Button Command="{Binding DeleteProjectCommand}" Padding="3" CommandParameter="{Binding ElementName=grid, Path=SelectedItem}" Content="Delete" />
+            </StackPanel>
+
+            <DataGrid ItemsSource="{Binding Path=Projects}" IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalGridLinesBrush="DarkGray" VerticalGridLinesBrush="DarkGray" x:Name="grid" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Project.Name}" />
+                    <DataGridTextColumn Header="Role" Binding="{Binding Path=Role}" />
+                    <DataGridTextColumn Binding="{Binding Path=IsMainForEmployee, Converter={StaticResource booleanToYesConverter}}"
+                                        Header="Main for Employee" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,27 @@
+﻿<Application x:Class="Northwind.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Common/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Common/Common.xaml"/>
+                <ResourceDictionary Source="Departments/DepartmentListView.xaml"/>
+                <ResourceDictionary Source="Departments/DepartmentView.xaml"/>
+                <ResourceDictionary Source="Employees/EmployeeListView.xaml"/>
+                <ResourceDictionary Source="Employees/EmployeeMainPropertiesView.xaml"/>
+                <ResourceDictionary Source="Employees/ChangeDepartmentView.xaml"/>
+                <ResourceDictionary Source="Projects/ProjectListView.xaml"/>
+                <ResourceDictionary Source="Projects/ProjectMainPropertiesView.xaml"/>
+                <ResourceDictionary Source="Employees/ExistingEmployeeView.xaml"/>
+                <ResourceDictionary Source="Employees/NewEmployeeView.xaml"/>
+                <ResourceDictionary Source="Employees/EmployeeProjectListView.xaml"/>
+                <ResourceDictionary Source="Employees/NewEmployeeProjectView.xaml"/>
+                <ResourceDictionary Source="Projects/NewProjectView.xaml"/>
+                <ResourceDictionary Source="Projects/ExistingProjectView.xaml"/>
+                <ResourceDictionary Source="Projects/ProjectEmployeeListView.xaml"/>
+                <ResourceDictionary Source="Dashboard/DashboardView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

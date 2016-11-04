@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:employees="clr-namespace:Northwind.UI.Employees">
+    <DataTemplate x:Key="EmployeeListView" DataType="employees:EmployeeListViewModel">
+
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Command="{Binding AddEmployeeCommand}" Padding="3" Content="Add" />
+                <Button Command="{Binding EditEmployeeCommand}" Padding="3" CommandParameter="{Binding ElementName=grid, Path=SelectedItem}" Content="Edit" />
+                <Button Command="{Binding DeleteEmployeeCommand}" Padding="3" CommandParameter="{Binding ElementName=grid, Path=SelectedItem}" Content="Delete" />
+            </StackPanel>
+
+            <DataGrid ItemsSource="{Binding Path=Employees}" IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalGridLinesBrush="DarkGray" VerticalGridLinesBrush="DarkGray" x:Name="grid" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                    <DataGridTextColumn Header="Department" Binding="{Binding DepartmentName}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+
+    </DataTemplate>
+</ResourceDictionary>
